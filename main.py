@@ -2,7 +2,7 @@ import openai
 from api_keys import *
 from json_retriever import retrive_json
 
-json_data = retrive_json('/Users/takasurazeem/Desktop/QuranMajeed Localizations/ur.xliff')
+json_data = retrive_json('path')
 
 openai.api_key = f"{OPEN_AI_KEY}"
 
