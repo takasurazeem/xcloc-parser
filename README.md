@@ -1,0 +1,1 @@
+## Mission abort. There's no free plan for open AI. My trial expired in April 2023 without me realizing it. 
