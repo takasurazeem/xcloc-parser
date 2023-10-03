@@ -1,3 +1,4 @@
 # Default ignored files
 /xcloc-files
 *.xliff
+api_keys.py
