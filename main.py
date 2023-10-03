@@ -1,3 +1,4 @@
+import json
 import xml.etree.ElementTree as ET
 
 # Load the XLIFF file
@@ -9,6 +10,8 @@ namespaces = {
     'xliff': 'urn:oasis:names:tc:xliff:document:1.2',
     'xsi': 'http://www.w3.org/2001/XMLSchema-instance',
 }
+
+elems = []
 
 # Find all trans-unit elements within the XLIFF file
 trans_units = root.findall('.//xliff:trans-unit', namespaces)
@@ -34,9 +37,16 @@ for trans_unit in trans_units:
         target_text = None
         target_state = None
 
-    print(f"ID: {unit_id}")
-    print(f"Source: {source}")
-    print(f"Note: {note_text}")
-    print(f"Target: {target_text}")
-    print(f"Target State: {target_state}")
-    print()
+    elems.append(
+        {
+            "ID": f"{unit_id}",
+            "Source": f"{source}",
+            "Note": f"{note_text}",
+            "Target": f"{target_text}",
+            "Target State": f"{target_state}"
+        }
+    )
+
+print(
+    f"{json.dumps(elems, ensure_ascii=False)}"
+)
